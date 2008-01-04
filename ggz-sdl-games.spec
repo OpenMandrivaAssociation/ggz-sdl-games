@@ -25,8 +25,8 @@ BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	mesagl-devel
 Requires:	libggz = %{libggz_version}
-Prereq:		ggz-client-libs = %{ggz_client_libs_version}
-Prereq:		libggz = %{libggz_version}
+Requires:		ggz-client-libs = %{ggz_client_libs_version}
+Requires:		libggz = %{libggz_version}
 Provides:	ggz-game-modules = %{version}
 
 %description
