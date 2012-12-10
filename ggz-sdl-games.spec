@@ -1,6 +1,3 @@
-%define version 0.0.14.1
-%define release %mkrel 5
-
 %define libggz_version %{version}
 %define ggz_client_libs_version %{version}
 
@@ -9,12 +6,11 @@
 
 Name:		ggz-sdl-games
 Summary:	GGZ Games in SDL user interface
-Version:	%{version}
-Release:	%{release}
+Version:	0.0.14.1
+Release:	6
 License:	GPL
 Group:		Games/Other
 URL:		http://www.ggzgamingzone.org/
-BuildRoot:	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 Source:		http://prdownload.sourceforge.net/ggz/%{name}-%{version}.tar.bz2
 
@@ -41,6 +37,7 @@ The Geek Game:  Calculate numbers in all directions and wrap around edges
 
 %build
 #export LDFLAGS=-L%{_prefix}/X11R6/%{_lib}
+export LDFLAGS="-lggz -lX11"
 %configure2_5x --with-libggz-libraries=%{_libdir} --with-ggzmod-libraries=%{_libdir} --with-ggzcore-libraries=%{_libdir}
 %make
 
@@ -94,4 +91,55 @@ fi
 %{_datadir}/ggz/ggz-config/*
 %{_datadir}/ggz/ttt3d
 
+
+
+
+%changelog
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 0.0.14.1-5mdv2011.0
++ Revision: 618453
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.0.14.1-4mdv2010.0
++ Revision: 429200
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 0.0.14.1-3mdv2009.0
++ Revision: 246054
+- rebuild
+
+* Tue Feb 26 2008 Emmanuel Andry <eandry@mandriva.org> 0.0.14.1-1mdv2008.1
++ Revision: 175560
+- New version
+
+* Fri Jan 04 2008 Thierry Vignaud <tv@mandriva.org> 0.0.14-1mdv2008.1
++ Revision: 145283
+- fix prereq
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
+* Sat Feb 10 2007 Emmanuel Andry <eandry@mandriva.org> 0.0.14-1mdv2007.0
++ Revision: 118779
+- New version 0.0.14
+- Import ggz-sdl-games
+
+* Sun Sep 03 2006 Emmanuel Andry <eandry@mandriva.org> 0.0.13-3mdv2007.0
+- fix x86_64 build
+
+* Tue May 30 2006 Emmanuel Andry <eandry@mandriva.org> 0.0.13-2mdk
+- rebuild because package seems to be lost in cyberspace
+
+* Sun May 28 2006 Emmanuel Andry <eandry@mandriva.org> 0.0.13-1mdk
+- New version
+- mkrel
+- buildrequires mesagl-devel
+
+* Sun Dec 26 2004 Abel Cheung <deaddog@mandrake.org> 0.0.9-1mdk
+- New version
+
+* Mon May 31 2004 Abel Cheung <deaddog@deaddog.org> 0.0.8-1mdk
+- New version
+- Drop patch, use LDFLAGS instead (patch unusable for 64bit)
 
