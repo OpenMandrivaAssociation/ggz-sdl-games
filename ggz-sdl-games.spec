@@ -7,7 +7,7 @@
 Name:		ggz-sdl-games
 Summary:	GGZ Games in SDL user interface
 Version:	0.0.14.1
-Release:	7
+Release:	8
 License:	GPLv2+
 Group:		Games/Other
 Url:		http://www.ggzgamingzone.org/
