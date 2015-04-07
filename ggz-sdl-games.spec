@@ -15,6 +15,8 @@ Source0:	http://prdownload.sourceforge.net/ggz/%{name}-%{version}.tar.bz2
 BuildRequires:	libggz-devel = %{libggz_version}
 BuildRequires:	ggz-client-libs-devel = %{ggz_client_libs_version}
 BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(glut)
 BuildRequires:	pkgconfig(SDL_image)
 BuildRequires:	pkgconfig(SDL_mixer)
 BuildRequires:	pkgconfig(SDL_ttf)
